@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticProfiles", "GeneticProfiles\GeneticProfiles.csproj", "{DF133F92-BD1C-4F22-BF9E-6BEBCC3D910F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF133F92-BD1C-4F22-BF9E-6BEBCC3D910F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF133F92-BD1C-4F22-BF9E-6BEBCC3D910F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF133F92-BD1C-4F22-BF9E-6BEBCC3D910F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF133F92-BD1C-4F22-BF9E-6BEBCC3D910F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F138A74-E129-4199-BDCC-D9297F8DE859}
+	EndGlobalSection
+EndGlobal
