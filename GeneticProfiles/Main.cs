@@ -16,5 +16,12 @@ namespace GeneticProfiles
         {
             InitializeComponent();
         }
+
+        private void btnSolve_Click(object sender, EventArgs e)
+        {
+            Solver solver = new Solver();
+
+            solver.Solve();
+        }
     }
 }
