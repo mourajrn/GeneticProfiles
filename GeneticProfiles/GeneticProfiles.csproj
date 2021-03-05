@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chromosome.cs" />
+    <Compile Include="GeneValue.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
