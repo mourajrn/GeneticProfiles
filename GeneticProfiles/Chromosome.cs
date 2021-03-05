@@ -9,18 +9,22 @@ namespace GeneticProfiles
 {
     public class Chromosome : ChromosomeBase
     {
-        public Chromosome(int length) : base(length)
+        public List<Span> Spans { get; private set; }
+
+        public Chromosome(List<Span> spans) : base(spans.Count)
         {
+            Spans = spans;
+            CreateGenes();
         }
 
         public override IChromosome CreateNew()
         {
-            throw new NotImplementedException();
+            return new Chromosome(Spans);
         }
 
-        public override Gene GenerateGene(int geneIndex)
+        public override GeneticSharp.Domain.Chromosomes.Gene GenerateGene(int geneIndex)
         {
-            throw new NotImplementedException();
+            return new Gene(new GeneValue(Spans[geneIndex]));
         }
     }
 }
