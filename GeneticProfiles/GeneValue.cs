@@ -21,7 +21,7 @@ namespace GeneticProfiles
 
         public override string ToString()
         {
-            return $"{Span.Lenght}m -> {Profile.Name}";
+            return $"{Span.Length}m -> {Profile.Name}";
         }
     }
 }

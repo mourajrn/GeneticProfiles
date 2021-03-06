@@ -16,7 +16,7 @@ namespace GeneticProfiles
                 .Select(gene => new
                 {
                     Profile = gene.Key,
-                    Total = gene.Sum(x => x.Span.Lenght)
+                    Total = gene.Sum(x => x.Span.Length)
                 })
                 .Select(r => new
                 {
