@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSpans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSpans.Designer.cs">
+      <DependentUpon>AddSpans.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chromosome.cs" />
     <Compile Include="Fitness.cs" />
     <Compile Include="GeneValue.cs" />
@@ -67,6 +73,9 @@
     <Compile Include="Solver.cs" />
     <Compile Include="Span.cs" />
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="AddSpans.resx">
+      <DependentUpon>AddSpans.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
