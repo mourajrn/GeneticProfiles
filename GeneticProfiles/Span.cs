@@ -8,18 +8,18 @@ namespace GeneticProfiles
 {
     public class Span
     {
-        public double Lenght { get; private set; }
+        public double Length { get; private set; }
         public List<Profile> PossibleProfiles { get; private set; }
 
-        public Span(double lenght, List<Profile> possibleProfiles)
+        public Span(double length, List<Profile> possibleProfiles)
         {
-            Lenght = lenght;
+            Length = length;
             PossibleProfiles = possibleProfiles ?? throw new ArgumentNullException(nameof(possibleProfiles));
         }
 
         public override string ToString()
         {
-            return Lenght.ToString();
+            return Length.ToString();
         }
     }
 }
