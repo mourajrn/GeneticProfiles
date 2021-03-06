@@ -8,11 +8,13 @@ namespace GeneticProfiles
 {
     public class Span
     {
+        public string Title { get; private set; }
         public double Length { get; private set; }
         public List<Profile> PossibleProfiles { get; private set; }
 
-        public Span(double length, List<Profile> possibleProfiles)
+        public Span(string title, double length, List<Profile> possibleProfiles)
         {
+            Title = title ?? throw new ArgumentNullException(nameof(title));
             Length = length;
             PossibleProfiles = possibleProfiles ?? throw new ArgumentNullException(nameof(possibleProfiles));
         }
