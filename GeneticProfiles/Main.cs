@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeneticSharp.Domain.Chromosomes;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -41,15 +42,25 @@ namespace GeneticProfiles
 
             dataGridSpans.Columns.Add("Title", "Title");
             dataGridSpans.Columns.Add("Length", "Length");
+            dataGridSpans.Columns.Add("Solution", "Solution");
             dataGridSpans.Columns[0].Width = 50;
-            dataGridSpans.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridSpans.Columns[1].Width = 50;
+            dataGridSpans.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void buttonSolve_Click(object sender, EventArgs e)
         {
             Solver solver = new Solver();
 
-            solver.Solve();
+            Gene[] genes = solver.Solve();
+
+            int counter = 0;
+
+            foreach (Gene gene in genes)
+            {
+                dataGridSpans.Rows[counter].Cells[2].Value = (gene.Value as GeneValue).Profile;
+                counter++;
+            }
         }
 
         private void buttonAddSpan_Click(object sender, EventArgs e)
