@@ -45,5 +45,13 @@ namespace GeneticProfiles
             Main.Spans.Add(new Span(textTitle.Text, Convert.ToDouble(textLength.Text, provider), PossibleProfiles));
             Close();
         }
+
+        private void comboProfiles_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonAssign_Click(this, EventArgs.Empty);
+            }
+        }
     }
 }

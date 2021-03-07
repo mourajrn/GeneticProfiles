@@ -94,6 +94,7 @@
             this.comboProfiles.Name = "comboProfiles";
             this.comboProfiles.Size = new System.Drawing.Size(184, 36);
             this.comboProfiles.TabIndex = 5;
+            this.comboProfiles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboProfiles_KeyPress);
             // 
             // labelProfiles
             // 
