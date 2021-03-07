@@ -45,6 +45,9 @@ namespace GeneticProfiles
                 Console.WriteLine("The file could not be read:");
                 Console.WriteLine(e.Message);
             }
+
+            dataGridSpans.Columns.Add("Profile", "Profile");
+            dataGridSpans.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void buttonSolve_Click(object sender, EventArgs e)
@@ -57,6 +60,13 @@ namespace GeneticProfiles
         private void buttonAddSpan_Click(object sender, EventArgs e)
         {
             new AddSpans().ShowDialog();
+
+            dataGridSpans.Rows.Clear();
+
+            foreach (Span span in Spans)
+            {
+                dataGridSpans.Rows.Add(span);
+            }
         }
     }
 }

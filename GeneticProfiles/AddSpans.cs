@@ -25,7 +25,7 @@ namespace GeneticProfiles
                 comboProfiles.Items.Add(profile);
             }
 
-            dataGridProfiles.Columns.Add("Perfil", "Perfil");
+            dataGridProfiles.Columns.Add("Profile", "Profile");
             dataGridProfiles.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
