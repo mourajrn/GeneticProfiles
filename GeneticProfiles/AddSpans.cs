@@ -30,6 +30,33 @@ namespace GeneticProfiles
             dataGridProfiles.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
+        public AddSpans(int index)
+        {
+            InitializeComponent();
+
+            Span selectedSpan = Main.Spans.GetRange(index, 1).Single();
+
+            PossibleProfiles = selectedSpan.PossibleProfiles;
+
+            textTitle.Text = selectedSpan.Title;
+            textLength.Text = selectedSpan.Length.ToString();
+
+            foreach (Profile profile in Main.Profiles)
+            {
+                comboProfiles.Items.Add(profile);
+            }
+
+            dataGridProfiles.Columns.Add("Profile", "Profile");
+            dataGridProfiles.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            foreach (Profile profile in PossibleProfiles)
+            {
+                dataGridProfiles.Rows.Add(profile);
+            }
+
+            buttonCreateSpan.Text = "Modify";
+        }
+
         private void buttonAssign_Click(object sender, EventArgs e)
         {
             PossibleProfiles.Add(comboProfiles.SelectedItem as Profile);

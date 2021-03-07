@@ -70,7 +70,11 @@ namespace GeneticProfiles
         private void buttonAddSpan_Click(object sender, EventArgs e)
         {
             new AddSpans().ShowDialog();
+            UpdateDataGrid();
+        }
 
+        private void UpdateDataGrid()
+        {
             dataGridSpans.Rows.Clear();
 
             int counter = 0;
@@ -101,6 +105,13 @@ namespace GeneticProfiles
                 dataGridSpans.Rows[counter].Cells[2].Value = profiles;
                 counter++;
             }
+        }
+
+        private void buttonEditSpan_Click(object sender, EventArgs e)
+        {
+            int index = dataGridSpans.CurrentCell.RowIndex;
+
+            new AddSpans(index).ShowDialog();
         }
     }
 }

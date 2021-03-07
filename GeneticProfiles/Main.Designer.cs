@@ -33,6 +33,7 @@
             this.buttonAddSpan = new System.Windows.Forms.Button();
             this.labelTotalWeightTitle = new System.Windows.Forms.Label();
             this.labelTotalWeight = new System.Windows.Forms.Label();
+            this.buttonEditSpan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSpans)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +95,17 @@
             this.labelTotalWeight.Size = new System.Drawing.Size(0, 28);
             this.labelTotalWeight.TabIndex = 2;
             // 
+            // buttonEditSpan
+            // 
+            this.buttonEditSpan.Font = new System.Drawing.Font("Artifakt Element", 12F);
+            this.buttonEditSpan.Location = new System.Drawing.Point(164, 12);
+            this.buttonEditSpan.Name = "buttonEditSpan";
+            this.buttonEditSpan.Size = new System.Drawing.Size(146, 39);
+            this.buttonEditSpan.TabIndex = 0;
+            this.buttonEditSpan.Text = "Edit Span";
+            this.buttonEditSpan.UseVisualStyleBackColor = true;
+            this.buttonEditSpan.Click += new System.EventHandler(this.buttonEditSpan_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -102,6 +114,7 @@
             this.Controls.Add(this.labelTotalWeight);
             this.Controls.Add(this.labelTotalWeightTitle);
             this.Controls.Add(this.dataGridSpans);
+            this.Controls.Add(this.buttonEditSpan);
             this.Controls.Add(this.buttonAddSpan);
             this.Controls.Add(this.buttonSolve);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -121,6 +134,7 @@
         private System.Windows.Forms.Button buttonAddSpan;
         private System.Windows.Forms.Label labelTotalWeightTitle;
         private System.Windows.Forms.Label labelTotalWeight;
+        private System.Windows.Forms.Button buttonEditSpan;
     }
 }
 
