@@ -42,10 +42,12 @@ namespace GeneticProfiles
 
             dataGridSpans.Columns.Add("Title", "Title");
             dataGridSpans.Columns.Add("Length", "Length");
+            dataGridSpans.Columns.Add("Possibles", "Possibles");
             dataGridSpans.Columns.Add("Solution", "Solution");
             dataGridSpans.Columns[0].Width = 50;
             dataGridSpans.Columns[1].Width = 50;
             dataGridSpans.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridSpans.Columns[3].Width = 100;
         }
 
         private void buttonSolve_Click(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace GeneticProfiles
 
             foreach (Gene gene in bestChromosome.GetGenes())
             {
-                dataGridSpans.Rows[counter].Cells[2].Value = (gene.Value as GeneValue).Profile;
+                dataGridSpans.Rows[counter].Cells[3].Value = (gene.Value as GeneValue).Profile;
                 counter++;
             }
 
@@ -78,6 +80,25 @@ namespace GeneticProfiles
                 dataGridSpans.Rows.Add();
                 dataGridSpans.Rows[counter].Cells[0].Value = span.Title;
                 dataGridSpans.Rows[counter].Cells[1].Value = span.Length;
+
+                string profiles = "";
+
+                int profileCounter = 0;
+
+                foreach (Profile profile in span.PossibleProfiles)
+                {
+                    if (profileCounter.Equals(0))
+                    {
+                        profiles = profile.ToString();
+                    }
+                    else
+                    {
+                        profiles += $", {profile}";
+                    }
+                    profileCounter++;
+                }
+
+                dataGridSpans.Rows[counter].Cells[2].Value = profiles;
                 counter++;
             }
         }
