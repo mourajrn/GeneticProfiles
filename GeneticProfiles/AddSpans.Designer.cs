@@ -96,6 +96,7 @@
             // 
             // comboProfiles
             // 
+            this.comboProfiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboProfiles.Font = new System.Drawing.Font("Artifakt Element", 12F);
             this.comboProfiles.FormattingEnabled = true;
             this.comboProfiles.Location = new System.Drawing.Point(102, 93);

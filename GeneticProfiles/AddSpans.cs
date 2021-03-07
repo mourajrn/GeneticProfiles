@@ -31,6 +31,8 @@ namespace GeneticProfiles
             dataGridProfiles.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             buttonCreateOrModify.Click += buttonCreateSpan_Click;
+
+            comboProfiles.SelectedIndex = 0;
         }
 
         public AddSpans(int index)
@@ -60,6 +62,8 @@ namespace GeneticProfiles
             buttonCreateOrModify.Text = "Modify";
 
             buttonCreateOrModify.Click += buttonModifySpan_Click;
+
+            comboProfiles.SelectedIndex = 0;
         }
 
         private void buttonAssign_Click(object sender, EventArgs e)
@@ -68,6 +72,8 @@ namespace GeneticProfiles
             dataGridProfiles.Rows.Add(comboProfiles.SelectedItem);
 
             comboProfiles.Items.Remove(comboProfiles.SelectedItem);
+
+            comboProfiles.SelectedIndex = 0;
         }
 
         private void buttonCreateSpan_Click(object sender, EventArgs e)
@@ -96,7 +102,7 @@ namespace GeneticProfiles
 
         private void comboProfiles_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
+            if (e.KeyChar == (char)43)
             {
                 buttonAssign_Click(this, EventArgs.Empty);
             }
