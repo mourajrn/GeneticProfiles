@@ -52,15 +52,17 @@ namespace GeneticProfiles
         {
             Solver solver = new Solver();
 
-            Gene[] genes = solver.Solve();
+            IChromosome bestChromosome = solver.Solve();
 
             int counter = 0;
 
-            foreach (Gene gene in genes)
+            foreach (Gene gene in bestChromosome.GetGenes())
             {
                 dataGridSpans.Rows[counter].Cells[2].Value = (gene.Value as GeneValue).Profile;
                 counter++;
             }
+
+            labelTotalWeight.Text = $"{1 / bestChromosome.Fitness} kg";
         }
 
         private void buttonAddSpan_Click(object sender, EventArgs e)

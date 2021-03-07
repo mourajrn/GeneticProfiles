@@ -31,6 +31,8 @@
             this.buttonSolve = new System.Windows.Forms.Button();
             this.dataGridSpans = new System.Windows.Forms.DataGridView();
             this.buttonAddSpan = new System.Windows.Forms.Button();
+            this.labelTotalWeightTitle = new System.Windows.Forms.Label();
+            this.labelTotalWeight = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSpans)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,11 +75,32 @@
             this.buttonAddSpan.UseVisualStyleBackColor = true;
             this.buttonAddSpan.Click += new System.EventHandler(this.buttonAddSpan_Click);
             // 
+            // labelTotalWeightTitle
+            // 
+            this.labelTotalWeightTitle.AutoSize = true;
+            this.labelTotalWeightTitle.Font = new System.Drawing.Font("Artifakt Element", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalWeightTitle.Location = new System.Drawing.Point(12, 408);
+            this.labelTotalWeightTitle.Name = "labelTotalWeightTitle";
+            this.labelTotalWeightTitle.Size = new System.Drawing.Size(131, 28);
+            this.labelTotalWeightTitle.TabIndex = 2;
+            this.labelTotalWeightTitle.Text = "Total Weight";
+            // 
+            // labelTotalWeight
+            // 
+            this.labelTotalWeight.AutoSize = true;
+            this.labelTotalWeight.Font = new System.Drawing.Font("Artifakt Element", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalWeight.Location = new System.Drawing.Point(152, 408);
+            this.labelTotalWeight.Name = "labelTotalWeight";
+            this.labelTotalWeight.Size = new System.Drawing.Size(0, 28);
+            this.labelTotalWeight.TabIndex = 2;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelTotalWeight);
+            this.Controls.Add(this.labelTotalWeightTitle);
             this.Controls.Add(this.dataGridSpans);
             this.Controls.Add(this.buttonAddSpan);
             this.Controls.Add(this.buttonSolve);
@@ -87,6 +110,7 @@
             this.Text = "GeneticProfiles";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSpans)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -95,6 +119,8 @@
         private System.Windows.Forms.Button buttonSolve;
         private System.Windows.Forms.DataGridView dataGridSpans;
         private System.Windows.Forms.Button buttonAddSpan;
+        private System.Windows.Forms.Label labelTotalWeightTitle;
+        private System.Windows.Forms.Label labelTotalWeight;
     }
 }
 
