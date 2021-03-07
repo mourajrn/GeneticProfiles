@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GeneticProfiles
@@ -42,12 +36,13 @@ namespace GeneticProfiles
             }
             catch (IOException e)
             {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
+                MessageBox.Show(e.Message);
             }
 
-            dataGridSpans.Columns.Add("Profile", "Profile");
-            dataGridSpans.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridSpans.Columns.Add("Title", "Title");
+            dataGridSpans.Columns.Add("Length", "Length");
+            dataGridSpans.Columns[0].Width = 50;
+            dataGridSpans.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void buttonSolve_Click(object sender, EventArgs e)
@@ -63,9 +58,14 @@ namespace GeneticProfiles
 
             dataGridSpans.Rows.Clear();
 
+            int counter = 0;
+
             foreach (Span span in Spans)
             {
-                dataGridSpans.Rows.Add(span);
+                dataGridSpans.Rows.Add();
+                dataGridSpans.Rows[counter].Cells[0].Value = span.Title;
+                dataGridSpans.Rows[counter].Cells[1].Value = span.Length;
+                counter++;
             }
         }
     }

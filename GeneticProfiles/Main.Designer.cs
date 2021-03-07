@@ -47,11 +47,18 @@
             // 
             // dataGridSpans
             // 
+            this.dataGridSpans.AllowUserToAddRows = false;
+            this.dataGridSpans.AllowUserToDeleteRows = false;
+            this.dataGridSpans.AllowUserToResizeColumns = false;
+            this.dataGridSpans.AllowUserToResizeRows = false;
             this.dataGridSpans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridSpans.Location = new System.Drawing.Point(12, 57);
             this.dataGridSpans.Name = "dataGridSpans";
             this.dataGridSpans.RowHeadersWidth = 51;
+            this.dataGridSpans.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridSpans.RowTemplate.Height = 24;
+            this.dataGridSpans.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridSpans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridSpans.Size = new System.Drawing.Size(776, 336);
             this.dataGridSpans.TabIndex = 1;
             // 
