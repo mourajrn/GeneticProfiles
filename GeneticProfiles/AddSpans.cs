@@ -130,5 +130,15 @@ namespace GeneticProfiles
             else
                 buttonRemoveProfile.Enabled = false;
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.Enter))
+            {
+                buttonCreateSpan_Click(this, EventArgs.Empty);
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

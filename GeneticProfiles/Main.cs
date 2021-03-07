@@ -123,5 +123,15 @@ namespace GeneticProfiles
             else
                 buttonEditSpan.Enabled = false;
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.Enter))
+            {
+                buttonSolve_Click(this, EventArgs.Empty);
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }
