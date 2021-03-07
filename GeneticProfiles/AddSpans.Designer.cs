@@ -36,7 +36,7 @@
             this.comboProfiles = new System.Windows.Forms.ComboBox();
             this.labelProfiles = new System.Windows.Forms.Label();
             this.buttonAssign = new System.Windows.Forms.Button();
-            this.buttonCreateSpan = new System.Windows.Forms.Button();
+            this.buttonCreateOrModify = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProfiles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,24 +118,23 @@
             this.buttonAssign.UseVisualStyleBackColor = true;
             this.buttonAssign.Click += new System.EventHandler(this.buttonAssign_Click);
             // 
-            // buttonCreateSpan
+            // buttonCreateOrModify
             // 
-            this.buttonCreateSpan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCreateSpan.Font = new System.Drawing.Font("Artifakt Element", 12F);
-            this.buttonCreateSpan.Location = new System.Drawing.Point(17, 471);
-            this.buttonCreateSpan.Name = "buttonCreateSpan";
-            this.buttonCreateSpan.Size = new System.Drawing.Size(309, 36);
-            this.buttonCreateSpan.TabIndex = 8;
-            this.buttonCreateSpan.Text = "Create Span";
-            this.buttonCreateSpan.UseVisualStyleBackColor = true;
-            this.buttonCreateSpan.Click += new System.EventHandler(this.buttonCreateSpan_Click);
+            this.buttonCreateOrModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCreateOrModify.Font = new System.Drawing.Font("Artifakt Element", 12F);
+            this.buttonCreateOrModify.Location = new System.Drawing.Point(17, 471);
+            this.buttonCreateOrModify.Name = "buttonCreateOrModify";
+            this.buttonCreateOrModify.Size = new System.Drawing.Size(309, 36);
+            this.buttonCreateOrModify.TabIndex = 8;
+            this.buttonCreateOrModify.Text = "Create Span";
+            this.buttonCreateOrModify.UseVisualStyleBackColor = true;
             // 
             // AddSpans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(347, 519);
-            this.Controls.Add(this.buttonCreateSpan);
+            this.Controls.Add(this.buttonCreateOrModify);
             this.Controls.Add(this.buttonAssign);
             this.Controls.Add(this.comboProfiles);
             this.Controls.Add(this.dataGridProfiles);
@@ -165,6 +164,6 @@
         private System.Windows.Forms.ComboBox comboProfiles;
         private System.Windows.Forms.Label labelProfiles;
         private System.Windows.Forms.Button buttonAssign;
-        private System.Windows.Forms.Button buttonCreateSpan;
+        private System.Windows.Forms.Button buttonCreateOrModify;
     }
 }

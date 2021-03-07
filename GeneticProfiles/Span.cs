@@ -19,6 +19,13 @@ namespace GeneticProfiles
             PossibleProfiles = possibleProfiles ?? throw new ArgumentNullException(nameof(possibleProfiles));
         }
 
+        public void Modify(string title, double length, List<Profile> possibleProfiles)
+        {
+            Title = title ?? throw new ArgumentNullException(nameof(title));
+            Length = length;
+            PossibleProfiles = possibleProfiles ?? throw new ArgumentNullException(nameof(possibleProfiles));
+        }
+
         public override string ToString()
         {
             return Length.ToString();

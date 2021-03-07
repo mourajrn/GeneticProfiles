@@ -43,7 +43,7 @@
             this.buttonSolve.Location = new System.Drawing.Point(642, 399);
             this.buttonSolve.Name = "buttonSolve";
             this.buttonSolve.Size = new System.Drawing.Size(146, 39);
-            this.buttonSolve.TabIndex = 0;
+            this.buttonSolve.TabIndex = 5;
             this.buttonSolve.Text = "Run";
             this.buttonSolve.UseVisualStyleBackColor = true;
             this.buttonSolve.Click += new System.EventHandler(this.buttonSolve_Click);
@@ -63,7 +63,7 @@
             this.dataGridSpans.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridSpans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridSpans.Size = new System.Drawing.Size(776, 336);
-            this.dataGridSpans.TabIndex = 1;
+            this.dataGridSpans.TabIndex = 2;
             // 
             // buttonAddSpan
             // 
@@ -83,7 +83,7 @@
             this.labelTotalWeightTitle.Location = new System.Drawing.Point(12, 408);
             this.labelTotalWeightTitle.Name = "labelTotalWeightTitle";
             this.labelTotalWeightTitle.Size = new System.Drawing.Size(131, 28);
-            this.labelTotalWeightTitle.TabIndex = 2;
+            this.labelTotalWeightTitle.TabIndex = 3;
             this.labelTotalWeightTitle.Text = "Total Weight";
             // 
             // labelTotalWeight
@@ -93,7 +93,7 @@
             this.labelTotalWeight.Location = new System.Drawing.Point(152, 408);
             this.labelTotalWeight.Name = "labelTotalWeight";
             this.labelTotalWeight.Size = new System.Drawing.Size(0, 28);
-            this.labelTotalWeight.TabIndex = 2;
+            this.labelTotalWeight.TabIndex = 4;
             // 
             // buttonEditSpan
             // 
@@ -101,7 +101,7 @@
             this.buttonEditSpan.Location = new System.Drawing.Point(164, 12);
             this.buttonEditSpan.Name = "buttonEditSpan";
             this.buttonEditSpan.Size = new System.Drawing.Size(146, 39);
-            this.buttonEditSpan.TabIndex = 0;
+            this.buttonEditSpan.TabIndex = 1;
             this.buttonEditSpan.Text = "Edit Span";
             this.buttonEditSpan.UseVisualStyleBackColor = true;
             this.buttonEditSpan.Click += new System.EventHandler(this.buttonEditSpan_Click);

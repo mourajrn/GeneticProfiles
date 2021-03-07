@@ -14,6 +14,7 @@ namespace GeneticProfiles
     public partial class AddSpans : Form
     {
         public List<Profile> PossibleProfiles { get; private set; }
+        public Span EditingSpan { get; private set; }
 
         public AddSpans()
         {
@@ -28,18 +29,20 @@ namespace GeneticProfiles
 
             dataGridProfiles.Columns.Add("Profile", "Profile");
             dataGridProfiles.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            buttonCreateOrModify.Click += buttonCreateSpan_Click;
         }
 
         public AddSpans(int index)
         {
             InitializeComponent();
 
-            Span selectedSpan = Main.Spans.GetRange(index, 1).Single();
+            EditingSpan = Main.Spans.GetRange(index, 1).Single();
 
-            PossibleProfiles = selectedSpan.PossibleProfiles;
+            PossibleProfiles = EditingSpan.PossibleProfiles;
 
-            textTitle.Text = selectedSpan.Title;
-            textLength.Text = selectedSpan.Length.ToString();
+            textTitle.Text = EditingSpan.Title;
+            textLength.Text = EditingSpan.Length.ToString();
 
             foreach (Profile profile in Main.Profiles)
             {
@@ -54,7 +57,9 @@ namespace GeneticProfiles
                 dataGridProfiles.Rows.Add(profile);
             }
 
-            buttonCreateSpan.Text = "Modify";
+            buttonCreateOrModify.Text = "Modify";
+
+            buttonCreateOrModify.Click += buttonModifySpan_Click;
         }
 
         private void buttonAssign_Click(object sender, EventArgs e)
@@ -72,6 +77,20 @@ namespace GeneticProfiles
             provider.NumberGroupSeparator = ".";
 
             Main.Spans.Add(new Span(textTitle.Text, Convert.ToDouble(textLength.Text, provider), PossibleProfiles));
+
+            Close();
+        }
+
+        private void buttonModifySpan_Click(object sender, EventArgs e)
+        {
+            NumberFormatInfo provider = new NumberFormatInfo();
+            provider.NumberDecimalSeparator = ",";
+            provider.NumberGroupSeparator = ".";
+
+            EditingSpan.Modify(textTitle.Text, Convert.ToDouble(textLength.Text, provider), PossibleProfiles);
+
+            MessageBox.Show("Modified");
+
             Close();
         }
 

@@ -18,7 +18,7 @@ namespace GeneticProfiles
 
             try
             {
-                using (var sr = new StreamReader("C:/Users/Pichau/Desktop/Perfis.csv"))
+                using (var sr = new StreamReader("Perfis.csv"))
                 {
                     string ln;
 
@@ -112,6 +112,8 @@ namespace GeneticProfiles
             int index = dataGridSpans.CurrentCell.RowIndex;
 
             new AddSpans(index).ShowDialog();
+
+            UpdateDataGrid();
         }
     }
 }
