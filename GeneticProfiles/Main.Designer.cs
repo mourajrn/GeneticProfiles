@@ -64,6 +64,7 @@
             this.dataGridSpans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridSpans.Size = new System.Drawing.Size(776, 336);
             this.dataGridSpans.TabIndex = 2;
+            this.dataGridSpans.SelectionChanged += new System.EventHandler(this.dataGridSpans_SelectionChanged);
             // 
             // buttonAddSpan
             // 
@@ -97,6 +98,7 @@
             // 
             // buttonEditSpan
             // 
+            this.buttonEditSpan.Enabled = false;
             this.buttonEditSpan.Font = new System.Drawing.Font("Artifakt Element", 12F);
             this.buttonEditSpan.Location = new System.Drawing.Point(164, 12);
             this.buttonEditSpan.Name = "buttonEditSpan";

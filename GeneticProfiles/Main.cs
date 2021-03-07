@@ -115,5 +115,11 @@ namespace GeneticProfiles
 
             UpdateDataGrid();
         }
+
+        private void dataGridSpans_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridSpans.SelectedRows.Count > 0)
+                buttonEditSpan.Enabled = true;
+        }
     }
 }
