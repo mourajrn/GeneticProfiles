@@ -78,11 +78,17 @@
             // 
             // dataGridProfiles
             // 
+            this.dataGridProfiles.AllowUserToAddRows = false;
+            this.dataGridProfiles.AllowUserToDeleteRows = false;
+            this.dataGridProfiles.AllowUserToResizeColumns = false;
+            this.dataGridProfiles.AllowUserToResizeRows = false;
             this.dataGridProfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProfiles.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridProfiles.Location = new System.Drawing.Point(17, 148);
             this.dataGridProfiles.Name = "dataGridProfiles";
             this.dataGridProfiles.RowHeadersWidth = 51;
             this.dataGridProfiles.RowTemplate.Height = 24;
+            this.dataGridProfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridProfiles.Size = new System.Drawing.Size(309, 317);
             this.dataGridProfiles.TabIndex = 7;
             // 
