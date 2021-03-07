@@ -37,6 +37,7 @@
             this.labelProfiles = new System.Windows.Forms.Label();
             this.buttonAssign = new System.Windows.Forms.Button();
             this.buttonCreateOrModify = new System.Windows.Forms.Button();
+            this.buttonRemoveProfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProfiles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +92,7 @@
             this.dataGridProfiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridProfiles.Size = new System.Drawing.Size(309, 317);
             this.dataGridProfiles.TabIndex = 7;
+            this.dataGridProfiles.SelectionChanged += new System.EventHandler(this.dataGridProfiles_SelectionChanged);
             // 
             // comboProfiles
             // 
@@ -98,7 +100,7 @@
             this.comboProfiles.FormattingEnabled = true;
             this.comboProfiles.Location = new System.Drawing.Point(102, 93);
             this.comboProfiles.Name = "comboProfiles";
-            this.comboProfiles.Size = new System.Drawing.Size(184, 36);
+            this.comboProfiles.Size = new System.Drawing.Size(145, 36);
             this.comboProfiles.TabIndex = 5;
             this.comboProfiles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboProfiles_KeyPress);
             // 
@@ -116,7 +118,7 @@
             // 
             this.buttonAssign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAssign.Font = new System.Drawing.Font("Artifakt Element", 12F);
-            this.buttonAssign.Location = new System.Drawing.Point(292, 93);
+            this.buttonAssign.Location = new System.Drawing.Point(253, 93);
             this.buttonAssign.Name = "buttonAssign";
             this.buttonAssign.Size = new System.Drawing.Size(34, 36);
             this.buttonAssign.TabIndex = 6;
@@ -135,11 +137,25 @@
             this.buttonCreateOrModify.Text = "Create Span";
             this.buttonCreateOrModify.UseVisualStyleBackColor = true;
             // 
+            // buttonRemoveProfile
+            // 
+            this.buttonRemoveProfile.Enabled = false;
+            this.buttonRemoveProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRemoveProfile.Font = new System.Drawing.Font("Artifakt Element", 12F);
+            this.buttonRemoveProfile.Location = new System.Drawing.Point(292, 93);
+            this.buttonRemoveProfile.Name = "buttonRemoveProfile";
+            this.buttonRemoveProfile.Size = new System.Drawing.Size(34, 36);
+            this.buttonRemoveProfile.TabIndex = 9;
+            this.buttonRemoveProfile.Text = "-";
+            this.buttonRemoveProfile.UseVisualStyleBackColor = true;
+            this.buttonRemoveProfile.Click += new System.EventHandler(this.buttonRemoveProfile_Click);
+            // 
             // AddSpans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(347, 519);
+            this.Controls.Add(this.buttonRemoveProfile);
             this.Controls.Add(this.buttonCreateOrModify);
             this.Controls.Add(this.buttonAssign);
             this.Controls.Add(this.comboProfiles);
@@ -171,5 +187,6 @@
         private System.Windows.Forms.Label labelProfiles;
         private System.Windows.Forms.Button buttonAssign;
         private System.Windows.Forms.Button buttonCreateOrModify;
+        private System.Windows.Forms.Button buttonRemoveProfile;
     }
 }

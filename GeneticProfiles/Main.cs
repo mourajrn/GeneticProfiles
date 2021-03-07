@@ -120,6 +120,8 @@ namespace GeneticProfiles
         {
             if (dataGridSpans.SelectedRows.Count > 0)
                 buttonEditSpan.Enabled = true;
+            else
+                buttonEditSpan.Enabled = false;
         }
     }
 }

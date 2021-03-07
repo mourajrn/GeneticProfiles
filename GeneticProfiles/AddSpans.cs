@@ -101,5 +101,34 @@ namespace GeneticProfiles
                 buttonAssign_Click(this, EventArgs.Empty);
             }
         }
+
+        private void buttonRemoveProfile_Click(object sender, EventArgs e)
+        {
+            int index = dataGridProfiles.CurrentCell.RowIndex;
+            
+            PossibleProfiles.RemoveAt(index);
+
+            comboProfiles.Items.Clear();
+
+            foreach (Profile profile in Main.Profiles.Where(p => !PossibleProfiles.Contains(p)))
+            {
+                comboProfiles.Items.Add(profile);
+            }
+
+            dataGridProfiles.Rows.Clear();
+
+            foreach (Profile profile in PossibleProfiles)
+            {
+                dataGridProfiles.Rows.Add(profile);
+            }
+        }
+
+        private void dataGridProfiles_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridProfiles.SelectedRows.Count > 0)
+                buttonRemoveProfile.Enabled = true;
+            else
+                buttonRemoveProfile.Enabled = false;
+        }
     }
 }
