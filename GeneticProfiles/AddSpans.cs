@@ -34,6 +34,8 @@ namespace GeneticProfiles
         {
             PossibleProfiles.Add(comboProfiles.SelectedItem as Profile);
             dataGridProfiles.Rows.Add(comboProfiles.SelectedItem);
+
+            comboProfiles.Items.Remove(comboProfiles.SelectedItem);
         }
 
         private void buttonCreateSpan_Click(object sender, EventArgs e)
