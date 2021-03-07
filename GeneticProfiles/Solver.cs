@@ -11,7 +11,7 @@ namespace GeneticProfiles
 {
     public class Solver
     {
-        public Gene[] Solve()
+        public IChromosome Solve()
         {
             var selection = new RouletteWheelSelection();
             var crossover = new TwoPointCrossover();
@@ -28,7 +28,7 @@ namespace GeneticProfiles
 
             ga.Start();
 
-            return ga.BestChromosome.GetGenes();
+            return ga.BestChromosome;
         }
     }
 }
