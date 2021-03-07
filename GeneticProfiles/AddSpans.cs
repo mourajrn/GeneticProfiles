@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,11 @@ namespace GeneticProfiles
 
         private void buttonCreateSpan_Click(object sender, EventArgs e)
         {
-            Main.Spans.Add(new Span(textTitle.Text, Convert.ToDouble(textLength.Text), PossibleProfiles));
+            NumberFormatInfo provider = new NumberFormatInfo();
+            provider.NumberDecimalSeparator = ",";
+            provider.NumberGroupSeparator = ".";
+
+            Main.Spans.Add(new Span(textTitle.Text, Convert.ToDouble(textLength.Text, provider), PossibleProfiles));
             Close();
         }
     }
