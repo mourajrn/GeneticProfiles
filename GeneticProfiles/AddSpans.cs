@@ -44,7 +44,7 @@ namespace GeneticProfiles
             textTitle.Text = EditingSpan.Title;
             textLength.Text = EditingSpan.Length.ToString();
 
-            foreach (Profile profile in Main.Profiles)
+            foreach (Profile profile in Main.Profiles.Where(p => !PossibleProfiles.Contains(p)))
             {
                 comboProfiles.Items.Add(profile);
             }
