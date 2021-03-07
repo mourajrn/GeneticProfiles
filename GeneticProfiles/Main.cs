@@ -15,6 +15,7 @@ namespace GeneticProfiles
     public partial class Main : Form
     {
         public static List<Profile> Profiles = new List<Profile>();
+        public static List<Span> Spans = new List<Span>();
 
         public Main()
         {
@@ -46,11 +47,16 @@ namespace GeneticProfiles
             }
         }
 
-        private void btnSolve_Click(object sender, EventArgs e)
+        private void buttonSolve_Click(object sender, EventArgs e)
         {
             Solver solver = new Solver();
 
             solver.Solve();
+        }
+
+        private void buttonAddSpan_Click(object sender, EventArgs e)
+        {
+            new AddSpans().ShowDialog();
         }
     }
 }
