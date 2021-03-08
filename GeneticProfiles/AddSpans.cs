@@ -160,7 +160,7 @@ namespace GeneticProfiles
             textTitle.Clear();
             textLength.Clear();
 
-            PossibleProfiles.Clear();
+            PossibleProfiles = new List<Profile>();
 
             comboProfiles.Items.Clear();
 
