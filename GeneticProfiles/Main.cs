@@ -67,6 +67,8 @@ namespace GeneticProfiles
             }
 
             labelTotalWeight.Text = $"{1 / bestChromosome.Fitness} kg";
+
+            MessageBox.Show("Process finished", "Finished", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonAddSpan_Click(object sender, EventArgs e)
