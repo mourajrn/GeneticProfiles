@@ -110,9 +110,12 @@ namespace GeneticProfiles
 
         private void buttonRemoveProfile_Click(object sender, EventArgs e)
         {
-            int index = dataGridProfiles.CurrentCell.RowIndex;
-            
-            PossibleProfiles.RemoveAt(index);
+            DataGridViewSelectedRowCollection rows = dataGridProfiles.SelectedRows;
+
+            List<Profile> backupList = new List<Profile>(PossibleProfiles);
+
+            foreach (DataGridViewRow row in rows)
+                PossibleProfiles.Remove(backupList.GetRange(row.Index, 1).Single());
 
             comboProfiles.Items.Clear();
 
