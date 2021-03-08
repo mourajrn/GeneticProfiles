@@ -42,6 +42,8 @@ namespace GeneticProfiles
         {
             InitializeComponent();
 
+            Spans = spans;
+
             EditingSpan = Spans.GetRange(index, 1).Single();
 
             PossibleProfiles = EditingSpan.PossibleProfiles;
