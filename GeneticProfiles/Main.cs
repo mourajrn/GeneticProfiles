@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GeneticProfiles
@@ -119,15 +120,22 @@ namespace GeneticProfiles
 
         private void dataGridSpans_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridSpans.SelectedRows.Count > 0)
+            if (dataGridSpans.SelectedRows.Count.Equals(0))
+            {
+                buttonEditSpan.Enabled = false;
+                buttonRemoveSpan.Enabled = false;
+            }
+            
+            if (dataGridSpans.SelectedRows.Count.Equals(1))
             {
                 buttonEditSpan.Enabled = true;
                 buttonRemoveSpan.Enabled = true;
             }
-            else
+
+            if (dataGridSpans.SelectedRows.Count > 1)
             {
                 buttonEditSpan.Enabled = false;
-                buttonRemoveSpan.Enabled = false;
+                buttonRemoveSpan.Enabled = true;
             }
         }
 
@@ -143,7 +151,13 @@ namespace GeneticProfiles
 
         private void buttonRemoveSpan_Click(object sender, EventArgs e)
         {
-            Spans.RemoveAt(dataGridSpans.CurrentCell.RowIndex);
+            DataGridViewSelectedRowCollection rows = dataGridSpans.SelectedRows;
+
+            List<Span> backupList = new List<Span>(Spans);
+
+            foreach (DataGridViewRow row in rows)
+                Spans.Remove(backupList.GetRange(row.Index, 1).Single());
+
             UpdateDataGrid();
         }
 
