@@ -26,6 +26,18 @@ namespace GeneticProfiles
             PossibleProfiles = possibleProfiles ?? throw new ArgumentNullException(nameof(possibleProfiles));
         }
 
+        public void AddProfile(Profile profile)
+        {
+            if (!PossibleProfiles.Contains(profile))
+                PossibleProfiles.Add(profile);
+        }
+
+        public void RemoveProfile(Profile profile)
+        {
+            if (PossibleProfiles.Contains(profile))
+                PossibleProfiles.Remove(profile);
+        }
+
         public override string ToString()
         {
             return Length.ToString();

@@ -65,6 +65,7 @@ namespace GeneticProfiles
             this.buttonAddProfile.TabIndex = 8;
             this.buttonAddProfile.Text = "Add";
             this.buttonAddProfile.UseVisualStyleBackColor = true;
+            this.buttonAddProfile.Click += new System.EventHandler(this.buttonAddProfile_Click);
             // 
             // buttonRemoveProfile
             // 
@@ -75,6 +76,7 @@ namespace GeneticProfiles
             this.buttonRemoveProfile.TabIndex = 8;
             this.buttonRemoveProfile.Text = "Remove";
             this.buttonRemoveProfile.UseVisualStyleBackColor = true;
+            this.buttonRemoveProfile.Click += new System.EventHandler(this.buttonRemoveProfile_Click);
             // 
             // BatchProfile
             // 

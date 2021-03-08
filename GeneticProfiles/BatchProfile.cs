@@ -12,14 +12,40 @@ namespace GeneticProfiles
 {
     public partial class BatchProfile : Form
     {
-        public BatchProfile()
+        public DataGridViewSelectedRowCollection Rows { get; private set; }
+
+        public BatchProfile(DataGridViewSelectedRowCollection rows)
         {
             InitializeComponent();
+
+            Rows = rows;
 
             foreach (Profile profile in Main.Profiles)
             {
                 comboProfiles.Items.Add(profile);
             }
+
+            comboProfiles.SelectedIndex = 0;
+        }
+
+        private void buttonAddProfile_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in Rows)
+            {
+                Span span = Main.Spans.GetRange(row.Index, 1).Single();
+                span.AddProfile(comboProfiles.SelectedItem as Profile);
+            }
+            Close();
+        }
+
+        private void buttonRemoveProfile_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in Rows)
+            {
+                Span span = Main.Spans.GetRange(row.Index, 1).Single();
+                span.RemoveProfile(comboProfiles.SelectedItem as Profile);
+            }
+            Close();
         }
     }
 }

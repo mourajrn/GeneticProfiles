@@ -203,7 +203,11 @@ namespace GeneticProfiles
 
         private void buttonBatchProfiles_Click(object sender, EventArgs e)
         {
-            new BatchProfile().ShowDialog();
+            DataGridViewSelectedRowCollection rows = dataGridSpans.SelectedRows;
+
+            new BatchProfile(rows).ShowDialog();
+
+            UpdateDataGrid();
         }
     }
 }
