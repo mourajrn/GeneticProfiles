@@ -127,6 +127,8 @@ namespace GeneticProfiles
             {
                 dataGridProfiles.Rows.Add(profile);
             }
+
+            comboProfiles.SelectedIndex = 0;
         }
 
         private void dataGridProfiles_SelectionChanged(object sender, EventArgs e)
@@ -145,6 +147,14 @@ namespace GeneticProfiles
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void dataGridProfiles_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)45)
+            {
+                buttonRemoveProfile_Click(this, EventArgs.Empty);
+            }
         }
     }
 }

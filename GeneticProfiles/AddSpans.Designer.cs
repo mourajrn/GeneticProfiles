@@ -93,6 +93,7 @@
             this.dataGridProfiles.Size = new System.Drawing.Size(309, 317);
             this.dataGridProfiles.TabIndex = 7;
             this.dataGridProfiles.SelectionChanged += new System.EventHandler(this.dataGridProfiles_SelectionChanged);
+            this.dataGridProfiles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridProfiles_KeyPress);
             // 
             // comboProfiles
             // 
