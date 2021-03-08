@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.buttonSolve = new System.Windows.Forms.Button();
             this.dataGridSpans = new System.Windows.Forms.DataGridView();
             this.buttonAddSpan = new System.Windows.Forms.Button();
@@ -161,9 +162,10 @@
             this.Controls.Add(this.buttonAddSpan);
             this.Controls.Add(this.buttonSolve);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
-            this.Text = "GeneticProfiles";
+            this.Text = "Genetic Profiles";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSpans)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
