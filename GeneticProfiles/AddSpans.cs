@@ -142,11 +142,51 @@ namespace GeneticProfiles
                 buttonRemoveProfile.Enabled = false;
         }
 
+        private void CreateSpanAndStartOther()
+        {
+            NumberFormatInfo provider = new NumberFormatInfo();
+            provider.NumberDecimalSeparator = ",";
+            provider.NumberGroupSeparator = ".";
+
+            string title = textTitle.Text;
+
+            Main.Spans.Add(new Span(title, Convert.ToDouble(textLength.Text, provider), PossibleProfiles));
+
+            textTitle.Clear();
+            textLength.Clear();
+
+            PossibleProfiles.Clear();
+
+            comboProfiles.Items.Clear();
+
+            foreach (Profile profile in Main.Profiles)
+            {
+                comboProfiles.Items.Add(profile);
+            }
+
+            dataGridProfiles.Rows.Clear();
+
+            int size = title.Length;
+
+            string prefix = title.Substring(0, 1);
+
+            int number = Convert.ToInt32(title.Substring(1, size - 1));
+
+            textTitle.Text = $"{prefix}{(number + 1)}";
+
+            textLength.Focus();
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == (Keys.Control | Keys.Enter))
             {
                 buttonCreateSpan_Click(this, EventArgs.Empty);
+            }
+
+            if (keyData == (Keys.Control | Keys.Right))
+            {
+                CreateSpanAndStartOther();
             }
 
             return base.ProcessCmdKey(ref msg, keyData);

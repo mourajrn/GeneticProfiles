@@ -48,7 +48,7 @@
             this.buttonSolve.Location = new System.Drawing.Point(642, 399);
             this.buttonSolve.Name = "buttonSolve";
             this.buttonSolve.Size = new System.Drawing.Size(146, 39);
-            this.buttonSolve.TabIndex = 5;
+            this.buttonSolve.TabIndex = 9;
             this.buttonSolve.Text = "Run";
             this.buttonSolve.UseVisualStyleBackColor = true;
             this.buttonSolve.Click += new System.EventHandler(this.buttonSolve_Click);
@@ -69,7 +69,7 @@
             this.dataGridSpans.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridSpans.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridSpans.Size = new System.Drawing.Size(776, 336);
-            this.dataGridSpans.TabIndex = 2;
+            this.dataGridSpans.TabIndex = 6;
             this.dataGridSpans.SelectionChanged += new System.EventHandler(this.dataGridSpans_SelectionChanged);
             // 
             // buttonAddSpan
@@ -90,7 +90,7 @@
             this.labelTotalWeightTitle.Location = new System.Drawing.Point(12, 408);
             this.labelTotalWeightTitle.Name = "labelTotalWeightTitle";
             this.labelTotalWeightTitle.Size = new System.Drawing.Size(131, 28);
-            this.labelTotalWeightTitle.TabIndex = 3;
+            this.labelTotalWeightTitle.TabIndex = 7;
             this.labelTotalWeightTitle.Text = "Total Weight";
             // 
             // labelTotalWeight
@@ -100,7 +100,7 @@
             this.labelTotalWeight.Location = new System.Drawing.Point(152, 408);
             this.labelTotalWeight.Name = "labelTotalWeight";
             this.labelTotalWeight.Size = new System.Drawing.Size(0, 28);
-            this.labelTotalWeight.TabIndex = 4;
+            this.labelTotalWeight.TabIndex = 8;
             // 
             // buttonEditSpan
             // 
@@ -121,7 +121,7 @@
             this.buttonRemoveSpan.Location = new System.Drawing.Point(277, 12);
             this.buttonRemoveSpan.Name = "buttonRemoveSpan";
             this.buttonRemoveSpan.Size = new System.Drawing.Size(161, 39);
-            this.buttonRemoveSpan.TabIndex = 1;
+            this.buttonRemoveSpan.TabIndex = 2;
             this.buttonRemoveSpan.Text = "Remove Span";
             this.buttonRemoveSpan.UseVisualStyleBackColor = true;
             this.buttonRemoveSpan.Click += new System.EventHandler(this.buttonRemoveSpan_Click);
@@ -132,7 +132,7 @@
             this.buttonSave.Location = new System.Drawing.Point(582, 12);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(100, 39);
-            this.buttonSave.TabIndex = 1;
+            this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -143,7 +143,7 @@
             this.buttonLoad.Location = new System.Drawing.Point(688, 12);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(100, 39);
-            this.buttonLoad.TabIndex = 1;
+            this.buttonLoad.TabIndex = 5;
             this.buttonLoad.Text = "Load";
             this.buttonLoad.UseVisualStyleBackColor = true;
             this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
@@ -155,7 +155,7 @@
             this.buttonBatchProfiles.Location = new System.Drawing.Point(444, 12);
             this.buttonBatchProfiles.Name = "buttonBatchProfiles";
             this.buttonBatchProfiles.Size = new System.Drawing.Size(132, 39);
-            this.buttonBatchProfiles.TabIndex = 1;
+            this.buttonBatchProfiles.TabIndex = 3;
             this.buttonBatchProfiles.Text = "Batch";
             this.buttonBatchProfiles.UseVisualStyleBackColor = true;
             this.buttonBatchProfiles.Click += new System.EventHandler(this.buttonBatchProfiles_Click);
