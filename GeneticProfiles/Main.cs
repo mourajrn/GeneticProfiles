@@ -123,18 +123,21 @@ namespace GeneticProfiles
             if (dataGridSpans.SelectedRows.Count.Equals(0))
             {
                 buttonEditSpan.Enabled = false;
+                buttonBatchProfiles.Enabled = false;
                 buttonRemoveSpan.Enabled = false;
             }
             
             if (dataGridSpans.SelectedRows.Count.Equals(1))
             {
                 buttonEditSpan.Enabled = true;
+                buttonBatchProfiles.Enabled = true;
                 buttonRemoveSpan.Enabled = true;
             }
 
             if (dataGridSpans.SelectedRows.Count > 1)
             {
                 buttonEditSpan.Enabled = false;
+                buttonBatchProfiles.Enabled = true;
                 buttonRemoveSpan.Enabled = true;
             }
         }
@@ -196,6 +199,11 @@ namespace GeneticProfiles
             }
 
             UpdateDataGrid();
+        }
+
+        private void buttonBatchProfiles_Click(object sender, EventArgs e)
+        {
+            new BatchProfile().ShowDialog();
         }
     }
 }

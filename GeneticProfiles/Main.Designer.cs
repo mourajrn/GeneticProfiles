@@ -38,6 +38,7 @@
             this.buttonRemoveSpan = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
+            this.buttonBatchProfiles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSpans)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,7 @@
             this.buttonAddSpan.Font = new System.Drawing.Font("Artifakt Element", 12F);
             this.buttonAddSpan.Location = new System.Drawing.Point(12, 12);
             this.buttonAddSpan.Name = "buttonAddSpan";
-            this.buttonAddSpan.Size = new System.Drawing.Size(146, 39);
+            this.buttonAddSpan.Size = new System.Drawing.Size(131, 39);
             this.buttonAddSpan.TabIndex = 0;
             this.buttonAddSpan.Text = "Add Span";
             this.buttonAddSpan.UseVisualStyleBackColor = true;
@@ -105,9 +106,9 @@
             // 
             this.buttonEditSpan.Enabled = false;
             this.buttonEditSpan.Font = new System.Drawing.Font("Artifakt Element", 12F);
-            this.buttonEditSpan.Location = new System.Drawing.Point(164, 12);
+            this.buttonEditSpan.Location = new System.Drawing.Point(149, 12);
             this.buttonEditSpan.Name = "buttonEditSpan";
-            this.buttonEditSpan.Size = new System.Drawing.Size(146, 39);
+            this.buttonEditSpan.Size = new System.Drawing.Size(122, 39);
             this.buttonEditSpan.TabIndex = 1;
             this.buttonEditSpan.Text = "Edit Span";
             this.buttonEditSpan.UseVisualStyleBackColor = true;
@@ -117,7 +118,7 @@
             // 
             this.buttonRemoveSpan.Enabled = false;
             this.buttonRemoveSpan.Font = new System.Drawing.Font("Artifakt Element", 12F);
-            this.buttonRemoveSpan.Location = new System.Drawing.Point(316, 12);
+            this.buttonRemoveSpan.Location = new System.Drawing.Point(277, 12);
             this.buttonRemoveSpan.Name = "buttonRemoveSpan";
             this.buttonRemoveSpan.Size = new System.Drawing.Size(161, 39);
             this.buttonRemoveSpan.TabIndex = 1;
@@ -128,7 +129,7 @@
             // buttonSave
             // 
             this.buttonSave.Font = new System.Drawing.Font("Artifakt Element", 12F);
-            this.buttonSave.Location = new System.Drawing.Point(483, 12);
+            this.buttonSave.Location = new System.Drawing.Point(582, 12);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(100, 39);
             this.buttonSave.TabIndex = 1;
@@ -139,13 +140,25 @@
             // buttonLoad
             // 
             this.buttonLoad.Font = new System.Drawing.Font("Artifakt Element", 12F);
-            this.buttonLoad.Location = new System.Drawing.Point(589, 12);
+            this.buttonLoad.Location = new System.Drawing.Point(688, 12);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(100, 39);
             this.buttonLoad.TabIndex = 1;
             this.buttonLoad.Text = "Load";
             this.buttonLoad.UseVisualStyleBackColor = true;
             this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
+            // 
+            // buttonBatchProfiles
+            // 
+            this.buttonBatchProfiles.Enabled = false;
+            this.buttonBatchProfiles.Font = new System.Drawing.Font("Artifakt Element", 12F);
+            this.buttonBatchProfiles.Location = new System.Drawing.Point(444, 12);
+            this.buttonBatchProfiles.Name = "buttonBatchProfiles";
+            this.buttonBatchProfiles.Size = new System.Drawing.Size(132, 39);
+            this.buttonBatchProfiles.TabIndex = 1;
+            this.buttonBatchProfiles.Text = "Batch";
+            this.buttonBatchProfiles.UseVisualStyleBackColor = true;
+            this.buttonBatchProfiles.Click += new System.EventHandler(this.buttonBatchProfiles_Click);
             // 
             // Main
             // 
@@ -157,6 +170,7 @@
             this.Controls.Add(this.dataGridSpans);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.buttonBatchProfiles);
             this.Controls.Add(this.buttonRemoveSpan);
             this.Controls.Add(this.buttonEditSpan);
             this.Controls.Add(this.buttonAddSpan);
@@ -183,6 +197,7 @@
         private System.Windows.Forms.Button buttonRemoveSpan;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonLoad;
+        private System.Windows.Forms.Button buttonBatchProfiles;
     }
 }
 
