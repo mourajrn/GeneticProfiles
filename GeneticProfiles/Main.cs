@@ -1,4 +1,5 @@
 ﻿using GeneticSharp.Domain.Chromosomes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -144,6 +145,23 @@ namespace GeneticProfiles
         {
             Spans.RemoveAt(dataGridSpans.CurrentCell.RowIndex);
             UpdateDataGrid();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            string output = JsonConvert.SerializeObject(Spans);
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt";
+            saveFileDialog.FilterIndex = 2;
+            saveFileDialog.RestoreDirectory = true;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter file = new StreamWriter(saveFileDialog.FileName))
+                {
+                    file.Write(output);
+                }
+            }
         }
     }
 }

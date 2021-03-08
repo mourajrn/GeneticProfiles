@@ -35,6 +35,7 @@
             this.labelTotalWeight = new System.Windows.Forms.Label();
             this.buttonEditSpan = new System.Windows.Forms.Button();
             this.buttonRemoveSpan = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSpans)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,6 +123,17 @@
             this.buttonRemoveSpan.UseVisualStyleBackColor = true;
             this.buttonRemoveSpan.Click += new System.EventHandler(this.buttonRemoveSpan_Click);
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Font = new System.Drawing.Font("Artifakt Element", 12F);
+            this.buttonSave.Location = new System.Drawing.Point(483, 12);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(100, 39);
+            this.buttonSave.TabIndex = 1;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -130,6 +142,7 @@
             this.Controls.Add(this.labelTotalWeight);
             this.Controls.Add(this.labelTotalWeightTitle);
             this.Controls.Add(this.dataGridSpans);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonRemoveSpan);
             this.Controls.Add(this.buttonEditSpan);
             this.Controls.Add(this.buttonAddSpan);
@@ -153,6 +166,7 @@
         private System.Windows.Forms.Label labelTotalWeight;
         private System.Windows.Forms.Button buttonEditSpan;
         private System.Windows.Forms.Button buttonRemoveSpan;
+        private System.Windows.Forms.Button buttonSave;
     }
 }
 
