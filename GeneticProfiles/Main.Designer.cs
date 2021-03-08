@@ -34,6 +34,7 @@
             this.labelTotalWeightTitle = new System.Windows.Forms.Label();
             this.labelTotalWeight = new System.Windows.Forms.Label();
             this.buttonEditSpan = new System.Windows.Forms.Button();
+            this.buttonRemoveSpan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSpans)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.dataGridSpans.AllowUserToResizeColumns = false;
             this.dataGridSpans.AllowUserToResizeRows = false;
             this.dataGridSpans.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridSpans.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridSpans.Location = new System.Drawing.Point(12, 57);
             this.dataGridSpans.Name = "dataGridSpans";
             this.dataGridSpans.RowHeadersWidth = 51;
@@ -108,6 +110,18 @@
             this.buttonEditSpan.UseVisualStyleBackColor = true;
             this.buttonEditSpan.Click += new System.EventHandler(this.buttonEditSpan_Click);
             // 
+            // buttonRemoveSpan
+            // 
+            this.buttonRemoveSpan.Enabled = false;
+            this.buttonRemoveSpan.Font = new System.Drawing.Font("Artifakt Element", 12F);
+            this.buttonRemoveSpan.Location = new System.Drawing.Point(316, 12);
+            this.buttonRemoveSpan.Name = "buttonRemoveSpan";
+            this.buttonRemoveSpan.Size = new System.Drawing.Size(161, 39);
+            this.buttonRemoveSpan.TabIndex = 1;
+            this.buttonRemoveSpan.Text = "Remove Span";
+            this.buttonRemoveSpan.UseVisualStyleBackColor = true;
+            this.buttonRemoveSpan.Click += new System.EventHandler(this.buttonRemoveSpan_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -116,6 +130,7 @@
             this.Controls.Add(this.labelTotalWeight);
             this.Controls.Add(this.labelTotalWeightTitle);
             this.Controls.Add(this.dataGridSpans);
+            this.Controls.Add(this.buttonRemoveSpan);
             this.Controls.Add(this.buttonEditSpan);
             this.Controls.Add(this.buttonAddSpan);
             this.Controls.Add(this.buttonSolve);
@@ -137,6 +152,7 @@
         private System.Windows.Forms.Label labelTotalWeightTitle;
         private System.Windows.Forms.Label labelTotalWeight;
         private System.Windows.Forms.Button buttonEditSpan;
+        private System.Windows.Forms.Button buttonRemoveSpan;
     }
 }
 

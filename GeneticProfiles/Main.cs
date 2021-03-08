@@ -119,9 +119,15 @@ namespace GeneticProfiles
         private void dataGridSpans_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridSpans.SelectedRows.Count > 0)
+            {
                 buttonEditSpan.Enabled = true;
+                buttonRemoveSpan.Enabled = true;
+            }
             else
+            {
                 buttonEditSpan.Enabled = false;
+                buttonRemoveSpan.Enabled = false;
+            }
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -132,6 +138,12 @@ namespace GeneticProfiles
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void buttonRemoveSpan_Click(object sender, EventArgs e)
+        {
+            Spans.RemoveAt(dataGridSpans.CurrentCell.RowIndex);
+            UpdateDataGrid();
         }
     }
 }
