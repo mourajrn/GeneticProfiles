@@ -12,11 +12,15 @@ namespace GeneticProfiles
 {
     public partial class BatchProfile : Form
     {
+        public List<Span> Spans { get; private set; }
+
         public DataGridViewSelectedRowCollection Rows { get; private set; }
 
-        public BatchProfile(DataGridViewSelectedRowCollection rows)
+        public BatchProfile(List<Span> spans, DataGridViewSelectedRowCollection rows)
         {
             InitializeComponent();
+
+            Spans = spans;
 
             Rows = rows;
 
@@ -32,7 +36,7 @@ namespace GeneticProfiles
         {
             foreach (DataGridViewRow row in Rows)
             {
-                Span span = Main.Spans.GetRange(row.Index, 1).Single();
+                Span span = Spans.GetRange(row.Index, 1).Single();
                 span.AddProfile(comboProfiles.SelectedItem as Profile);
             }
             Close();
@@ -42,7 +46,7 @@ namespace GeneticProfiles
         {
             foreach (DataGridViewRow row in Rows)
             {
-                Span span = Main.Spans.GetRange(row.Index, 1).Single();
+                Span span = Spans.GetRange(row.Index, 1).Single();
                 span.RemoveProfile(comboProfiles.SelectedItem as Profile);
             }
             Close();

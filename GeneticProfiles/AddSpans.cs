@@ -14,11 +14,14 @@ namespace GeneticProfiles
     public partial class AddSpans : Form
     {
         public List<Profile> PossibleProfiles { get; private set; }
+        public List<Span> Spans { get; private set; }
         public Span EditingSpan { get; private set; }
 
-        public AddSpans()
+        public AddSpans(List<Span> spans)
         {
             InitializeComponent();
+
+            Spans = spans;
 
             PossibleProfiles = new List<Profile>();
 
@@ -35,11 +38,11 @@ namespace GeneticProfiles
             comboProfiles.SelectedIndex = 0;
         }
 
-        public AddSpans(int index)
+        public AddSpans(List<Span> spans, int index)
         {
             InitializeComponent();
 
-            EditingSpan = Main.Spans.GetRange(index, 1).Single();
+            EditingSpan = Spans.GetRange(index, 1).Single();
 
             PossibleProfiles = EditingSpan.PossibleProfiles;
 
@@ -82,7 +85,7 @@ namespace GeneticProfiles
             provider.NumberDecimalSeparator = ",";
             provider.NumberGroupSeparator = ".";
 
-            Main.Spans.Add(new Span(textTitle.Text, Convert.ToDouble(textLength.Text, provider), PossibleProfiles));
+            Spans.Add(new Span(textTitle.Text, Convert.ToDouble(textLength.Text, provider), PossibleProfiles));
 
             Close();
         }
@@ -150,7 +153,7 @@ namespace GeneticProfiles
 
             string title = textTitle.Text;
 
-            Main.Spans.Add(new Span(title, Convert.ToDouble(textLength.Text, provider), PossibleProfiles));
+            Spans.Add(new Span(title, Convert.ToDouble(textLength.Text, provider), PossibleProfiles));
 
             textTitle.Clear();
             textLength.Clear();

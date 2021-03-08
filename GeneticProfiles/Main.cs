@@ -12,7 +12,7 @@ namespace GeneticProfiles
     public partial class Main : Form
     {
         public static List<Profile> Profiles = new List<Profile>();
-        public static List<Span> Spans = new List<Span>();
+        public List<Span> Spans = new List<Span>();
 
         public Main()
         {
@@ -56,7 +56,7 @@ namespace GeneticProfiles
         {
             Solver solver = new Solver();
 
-            IChromosome bestChromosome = solver.Solve();
+            IChromosome bestChromosome = solver.Solve(Spans);
 
             int counter = 0;
 
@@ -71,7 +71,7 @@ namespace GeneticProfiles
 
         private void buttonAddSpan_Click(object sender, EventArgs e)
         {
-            new AddSpans().ShowDialog();
+            new AddSpans(Spans).ShowDialog();
             UpdateDataGrid();
         }
 
@@ -113,7 +113,7 @@ namespace GeneticProfiles
         {
             int index = dataGridSpans.CurrentCell.RowIndex;
 
-            new AddSpans(index).ShowDialog();
+            new AddSpans(Spans, index).ShowDialog();
 
             UpdateDataGrid();
         }
@@ -205,7 +205,7 @@ namespace GeneticProfiles
         {
             DataGridViewSelectedRowCollection rows = dataGridSpans.SelectedRows;
 
-            new BatchProfile(rows).ShowDialog();
+            new BatchProfile(Spans, rows).ShowDialog();
 
             UpdateDataGrid();
         }

@@ -42,5 +42,27 @@ namespace GeneticProfiles
         {
             return Length.ToString();
         }
+
+        public override bool Equals(object obj)
+        {
+            if ((obj == null) || !GetType().Equals(obj.GetType()))
+            {
+                return false;
+            }
+            else
+            {
+                Span other = (Span)obj;
+                return Title.Equals(other.Title);
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = 955492210;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Title);
+            hashCode = hashCode * -1521134295 + Length.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<List<Profile>>.Default.GetHashCode(PossibleProfiles);
+            return hashCode;
+        }
     }
 }

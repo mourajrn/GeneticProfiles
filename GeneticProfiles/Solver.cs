@@ -11,13 +11,13 @@ namespace GeneticProfiles
 {
     public class Solver
     {
-        public IChromosome Solve()
+        public IChromosome Solve(List<Span> spans)
         {
             var selection = new RouletteWheelSelection();
             var crossover = new TwoPointCrossover();
             var mutation = new UniformMutation();
             var fitness = new Fitness();
-            var chromosome = new Chromosome(Main.Spans);
+            var chromosome = new Chromosome(spans);
             var population = new Population(1000, 1000, chromosome);
 
             var ga = new GeneticAlgorithm(population, fitness, selection, crossover, mutation);
