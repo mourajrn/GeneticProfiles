@@ -163,5 +163,25 @@ namespace GeneticProfiles
                 }
             }
         }
+
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "txt files (*.txt)|*.txt";
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamReader file = new StreamReader(openFileDialog.FileName))
+                {
+                    string input = file.ReadToEnd();
+                    List<Span> deserializedSpans = JsonConvert.DeserializeObject<List<Span>>(input);
+
+                    Spans = deserializedSpans;
+                }
+            }
+
+            UpdateDataGrid();
+        }
     }
 }
