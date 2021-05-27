@@ -21,7 +21,7 @@ namespace GeneticProfiles
                 .Select(r => new
                 {
                     Profile = r.Profile,
-                    Total = r.Total.MultiploSuperior(6)
+                    Total = r.Total.MultiploSuperior(12)
                 })
                 .ToList();
 

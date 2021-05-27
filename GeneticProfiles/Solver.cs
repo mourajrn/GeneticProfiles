@@ -18,13 +18,13 @@ namespace GeneticProfiles
             var mutation = new UniformMutation();
             var fitness = new Fitness();
             var chromosome = new Chromosome(spans);
-            var population = new Population(1000, 1000, chromosome);
+            var population = new Population(100, 100, chromosome);
 
             var ga = new GeneticAlgorithm(population, fitness, selection, crossover, mutation);
             ga.Termination = new GenerationNumberTermination(100);
 
-            ga.CrossoverProbability = 1;
-            ga.MutationProbability = 0.5F;
+            ga.CrossoverProbability = 0.8F;
+            ga.MutationProbability = 0.1F;
 
             ga.Start();
 
